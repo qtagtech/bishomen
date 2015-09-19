@@ -1,0 +1,234 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<head lang="en">
+	<meta http-equiv="content-type" content="text/html;charset=utf-8">
+	<title>Olympia HTML/CSS Template Documentation</title>
+	<!-- Framework CSS -->
+	<link rel="stylesheet" href="assets/blueprint-css/screen.css" type="text/css" media="screen, projection">
+	<link rel="stylesheet" href="assets/blueprint-css/print.css" type="text/css" media="print">
+	<!--[if lt IE 8]><link rel="stylesheet" href="assets/blueprint-css/ie.css" type="text/css" media="screen, projection"><![endif]-->
+	<link rel="stylesheet" href="assets/blueprint-css/plugins/fancy-type/screen.css" type="text/css" media="screen, projection">
+	<style type="text/css" media="screen">
+		p, table, hr, .box { margin-bottom:25px; }
+		.box p { margin-bottom:10px; }
+	</style>
+</head>
+<body>
+	<div class="container">	
+		<h3 class="center alt">&ldquo;Olympia: Html5 Responsive eCommerce &rdquo; Documentation by &ldquo;Speed730&rdquo; v1.0</h3>		
+		<hr>		
+		<h1 class="center">&ldquo;Template Name&rdquo;</h1>		
+		<div class="borderTop">
+			<div class="span-6 colborder info prepend-1">
+				<p class="prepend-top">
+					<strong>
+					Created: 31/May/2013<br>
+					By: Speed730<br>
+					Email: <a href="mailto:support@speed730.net">support@speed730.net</a>
+					</strong>
+				</p>
+			</div><!-- end div .span-6 -->	
+			<div class="span-12 last">
+				<p class="prepend-top append-0">Thank you for purchasing my theme. If you have any questions that are beyond the scope of this help file, please feel free to email via my user page contact form <a href="http://themeforest.net/user/speed730">here</a>. Thanks so much!</p>
+			</div>
+		</div><!-- end div .borderTop -->		
+		<hr>		
+		<h2 id="toc" class="alt">Table of Contents</h2>
+		<ol class="alpha">
+			<li><a href="#htmlStructure">HTML Structure</a></li>
+			<li><a href="#cssFiles">CSS Files and Structure</a></li>
+			<li><a href="#less">Generate Custom Style</a></li>			
+			<li><a href="#javascript">JavaScript</a></li>
+			<li><a href="#edit">Editing HTML Templates</a></li>
+			<li><a href="#rev-slider">Revolution Slider</a></li>			
+			<li><a href="#psdFiles">PSD Files</a></li>
+			<li><a href="#credits">Sources and Credits</a></li>			
+		</ol>		
+		<hr>		
+		<h3 id="htmlStructure"><strong>A) HTML Structure</strong> - <a href="#toc">top</a></h3>
+		<p>This theme is a responsive layout with 3 columns. All of the information within the main content area is nested within a div with an id of "wrapper". The sidebar's (#column-left, #column-right) content is within a div with an id of "main-container". The general template structure is the same throughout most of the templates. Here is the general structure.</p>		
+		<img src="assets/images/htmlstructure.png" alt="HTML Structure" />		
+		<p>If you would like to edit the color, font, or style of any elements in one of these columns, you would do the following:</p>
+
+<pre>for site content -  #main-container a {
+		color: #dfdfdf;
+	} 
+</pre>
+		<p>If you find that your new style is not overriding, it is most likely because of a specificity problem. Scroll down in your CSS file and make sure that there isn't a similar style that has more weight.</p>
+
+		<p>I.E.</p>
+
+<pre>	#wrapper #main-container a {
+		color: #dfdfdf;
+	}
+</pre>
+
+		<p>So, to ensure that your new styles are applied, make sure that they carry enough "weight" and that there isn't a style lower in the CSS file that is being applied after yours.</p>
+		<hr>
+		<h3 id="cssFiles"><strong>B) CSS Files and Structure</strong> - <a href="#toc">top</a></h3>
+		<ul>
+			<li>custom.css - main stylesheet</li>
+			<li>grid.css -layout and responsive stylesheet</li>
+			<li>reset.css default browser reset stylesheet</li>
+			<li>text.css - general text and fonts</li>			
+			<li>prettyPhoto.css - images preview lightbox used for product detail page and blog posts</li>
+			<li>jquery.jqzoom.css - for images magnife zoom effect for product detail templates</li>
+			<li>inside styles folder :custom styles files (red.css, gree.css, rose.css, yellow.css, blue.css)</li>
+			<li>inside styles folder : additional LESS files (style.less, mixins.less) to generate more stylesheet follow the <a href="#less">LESS section</a> below to know more</li>
+		</ul>
+		<div class="notice">
+			to youse a specific color style include the choosen stylesheet in the header section examl:
+			to use the re color schema
+		</div>
+
+		<pre>link rel="stylesheet" href="css/styles/red.css" media="screen" </pre>
+
+		<p>If you would like to edit a specific section of the site, simply find the appropriate label in the CSS file, and then scroll down until you find the appropriate style that needs to be edited.</p>		
+		
+		<hr>
+		<h3 id="less"><strong>C) CSS Files and Structure</strong> - <a href="#toc">top</a></h3>
+
+		<p>width Less (The Dynamic Stylesheet language) you can easily generate a css file </p>
+		<p>style.less - this file containe all the custom css stylesheet needed to change the site styles colors</p>
+		<p>mixins.less - containe helpers function this must be to generate new style.css</p>
+
+		<p>Q : so.. how to i generate a new stylesheet ?</p>
+		<p>A : follow the steps below :</p>
+		<ol>
+			<li>open style.css and change the @variables showen on the images below show you all the colors you need to be change to make a style :
+				<img src="assets/images/less-guide.png" alt="less-guide">
+			</li>
+			<li>after changing the colorsvalues your a less generator to generate style.css i use <a href="www.sublimetext.com/">sublime Text</a> and install less package to generate style.css files form style.less file</li>
+		</ol>
+		<div class="notice">
+			you need to download the less.js javascript file from <a href="http://lesscss.org/">lesscss.org/</a>
+		</div>
+		<div class="notice">
+				<p>checkout <a target="_blank"	 href="http://tutsplus.com">Tutsplus</a>and watch course <a href="https://tutsplus.com/course/improve-workflow-in-sublime-text-2/">Perfect Workflow in Sublime Text 2</a></p>
+				<p>if you need help to generate a custom stylesheet file contact me via <a href="http://support.speed730.net">speed730 support forum</a> or <a href="http://themeforest.net/user/speed730">Themeforest - Speed730</a></p>
+			</div>
+		<hr>
+		<h3 id="javascript"><strong>D) JavaScript</strong> - <a href="#toc">top</a></h3>		
+		<p>List of JS files</p>
+		<ol>
+			<li>jquery-1.7.1.min.js</li>
+			<li>jquery-ui-1.10.3.min.js</li>
+			<li>idangerous.swiper-1.9.min.js - used in template index3.html featured full-width images slider</li>
+			<li>jquery.fitvids.min.js - makes videos repoinsive</li>
+			<li>jquery.flexslider.js - used in banners and prouct boxes slider</li>
+			<li>jquery.jcarousel.min.js - used in brands jcarousel</li>
+			<li>jquery.jqzoom-core-pack.js - Magnify effect for product detail page</li>
+			<li>jquery.prettyPhoto.js - blog and product detail image lightbox preview</li>
+			<li>jquery.prettyPopin.js  - product quick view popup</li>
+			<li>jquery.sharrre-1.3.4.min.js - blog post share social buttons</li>			
+			<li>jquery.tweet.js - twitter widget</li>
+			<li>kenburns.js - images slideshow</li>			
+			<li>custom.js this is the main js file where you can add or change scripe, it's wel commented and easy to undrestand to edit change or add</li>
+		</ol>		
+		<hr>
+		<h3 id="edit"><strong>E) Editing HTML Templates</strong> - <a href="#toc">top</a></h3>
+		<p>editing templates is very easy as they are commented, but there is some help may needed for some advance plugin used in this template :</p>
+		<h4>Disadisable Respnisve functionality</h4>
+		<p>to disable the responsive multi device retain functinality openup html template and search in header for css section and remove  respinsive.css included link from the header and your site will not change the size on other devices</p>
+		<img src="assets/images/responsive.png">
+		<h4>Use Boxed Layout</h4>
+		<p>to make side boxed target the div with ID : wrapper {id="wrapper"} and add a class boxed to the wrapper div { id="wrapper" class="boxed"}</p>
+		<img src="assets/images/boxed-layout.png">		
+		<hr>
+		<h4>google map</h4>
+			<p>open contact.html and search for <scrip> tag [ type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=YOUR-GOOGLE-API-KEY&amp;sensor=false"></p>
+			<img src="assets/images/google-map.png">
+			<p>openc custom.js and search for function initialize(){} and add your google map latitude and longitude and Markers options</p>						
+			<p>to create your API key, visit the APIs Console at <a href="https://code.google.com/apis/console">Google Map API v3</a></p>			
+			<img src="assets/images/google-map2.png">
+			<hr>
+			<h4>Background Slideshow</h4>
+			<p>for background slideshow open background-slideshow.html and search for tag canvas with ID "bg-slideshow" and add the width & height of your fullsize images</p>
+			<img src="assets/images/bg-slideshow-a.png">
+			<p>open custom.js and search for a comment "//Background slideshow" below this comment is the background slideshow function add your iamges paths to the js array inside the function, you can experiment and chnage any options there</p>
+			<img src="assets/images/bg-slideshow-b.png">			
+			<hr>
+			<h4>Twitter widget</h4>			
+			<img src="assets/images/twitter-acces.png">
+			<p>open custom.js and search for a comment "// footer tweeter widget" and change tweeter username : and tweets count</p>
+			<img src="assets/images/tweeter-widget.png">
+			<hr>
+			<h4>Facebook Page</h4>
+			<p>open any template and go to footer section search for a div with ID "facebook-page" is a nested div, change profile_id="your profule id"</p>			
+			<img src="assets/images/facebook-page-id.png">
+			<div class="notice">get your facebook profile id from <a target="_blank" href="http://graph.facebook.com/Type Your facebook profile">graph.facebook.com</a>
+				<h4>Product Quick View</h4>
+				<p>example in index.html template file, quick view features let clients know and see more details of your product, the template can use quick-view-template.php as the file to open, you can use Php/Ajax stuff to send function like product-id but if you want use only simple html you need to creat each file for each product and asign in to the tumbnial href link</p>
+			</div>
+			<h4>Custom Ribbons</h4>			
+			<p>with olympia we include 2 type of banners ribbons</p>
+			<ol>
+			<li>
+				star ribbon you the classes bellow to a span tag to add the star ribbon
+				<p>class : (star-ribbon) to add star ribbon to banner</p>
+				<p> class : (star-ribbon-left/star-ribbon-right)ribbon position left or right</p>
+			  <p>class : green-ribbon ribbon color (green-ribbon, blue-ribbon, orange-ribbon, yellow-ribbon, red-ribbon), also you have the PSD file (ustom-star-ribbon.psd) to create your own ribbon</p>
+			</li>
+			<li>custom ribbon this require you to add your own text on the ribbon, psd files : custom-ribbon-left.psd and custom-ribbon-right.psd
+				example : span class="custom-ribbon left-ribbon" style="background-image:url('images/custom-ribbon1.png'), 
+				this adds a custom ribbon to the left with background of that new ribbon
+			</li>
+			</ol>
+		<hr>
+		<h3 id="rev-slider"><strong>F) Revoluion Slider integration</strong> - <a href="#toc">top</a></h3>
+		<p>for Revolution Slider Plugin Full documentation check <a href="revolutionslider/index.html">revolution slider plugin</a></p>
+		<p>Revolution Slider Html Code integration for olympia in template : revolution-slider.html</p>		
+		<img src="assets/images/rev-slider-html.jpg">
+		<div class="notice">
+			Dont forget to include the js and .css files comes with Revolution Slider plugin
+			<ul>
+			<li>rs-plugin/css/settings.css</li>
+			<li>rs-plugin/js/jquery.themepunch.revolution.min.js</li>
+			</ul>
+		</div>
+		<hr>
+		<h3 id="psdFiles"><strong>G) PSD Files</strong> - <a href="#toc">top</a></h3>
+		<p>I've included 15 psds with this theme:</p>		
+			<ol>
+				<li>olympia-home.psd</li>
+				<li>olympia-home-2.psd</li>
+				<li>olympia-category-grid.psd</li>
+				<li>olympia-category-list.psd</li>
+				<li>olympia-product-full.psd</li>
+				<li>olympia-product-sidebar.psd</li>
+				<li>olympia-blog-listing.psd</li>
+				<li>olympia-blog-post.psd</li>
+				<li>olympia-cart.psd</li>
+				<li>olympia-checkout.psd</li>
+				<li>olympia-compare.psd</li>
+				<li>olympia-contact.psd</li>
+				<li>custom-ribbon-left.psd</li>
+				<li>custom-ribbon-right.psd</li>
+				<li>custom-star-ribbon.psd</li>
+			</ol>		
+		<hr>
+		<h3 id="credits"><strong>H) Sources and Credits</strong> - <a href="#toc">top</a></h3>		
+		<p>I've used the following files</p>
+		<ul>				
+				<li>Tileable patterns <a href="http://subtlepatterns.com" title="">Subtle Patterns</a></li>
+				<li><a href="http://www.idangero.us/sliders/swiper/">swiper&3dflow -slider</a></li>
+				<li><a href="http://www.willmcgugan.com/2011/2/26/ken-burns-effect-with-javascript-and-canvas/" title="kenburns background slideshow">kenburns background slideshow</a></li>
+				<li><a href="http://www.woothemes.com/flexslider/" title="flexslider">flexslider</a></li>				
+				<li><a href="http://fitvidsjs.com/" title="jquery.fitvids">jquery.fitvids</a></li>				
+				<li><a href="http://www.mind-projects.it/projects/jqzoom/" title="jquery.jqzoom">jquery.jqzoom</a></li>
+				<li><a href="http://www.no-margin-for-errors.com/projects/prettyPhoto-jquery-lightbox-clone/" title="jquery.prettyPhoto">jquery.prettyPhoto</a></li>
+				<li><a href="http://www.no-margin-for-errors.com/projects/prettyPhoto-jquery-lightbox-clone/" title="jquery.prettyPhoto">jquery.prettyPopin.js</a></li>
+				<li><a href="http://sharrre.com/" title="jquery.sharrre">jquery.sharrre</a></li>				
+				<li><a href="http://tweet.seaofclouds.com/" title="jquery.tweet">jquery.tweet</a></li>				
+		</ul>
+		
+		<hr>
+		
+		<p>Once again, thank you so much for purchasing this theme. As I said at the beginning, I'd be glad to help you if you have any questions relating to this theme. If you have a more general question relating to the themes on ThemeForest, you might consider visiting the <a href="http://speed730.net">speed730 support forum</a> or asking your question in the "Item Discussion" section. if our supper forum is closed</p>
+		
+		<p class="append-bottom alt large"><strong>Your Name</strong></p>
+		<p><a href="#toc">Go To Table of Contents</a></p>
+		
+		<hr class="space">
+	</div><!-- end div .container -->
+</body>
+</html>

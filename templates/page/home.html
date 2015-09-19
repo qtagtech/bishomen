@@ -1,0 +1,154 @@
+<div id="featured">
+    <div id="slideshow_wrapper" class="clearfix">
+    <div class="swiper-main">
+    <span aria-hidden="true" class="icomoon arrow-left" data-icon="&#xe00e;"></span> <span aria-hidden="true" class="icomoon arrow-right" data-icon="&#xe011;"></span>
+    <ks-swiper-container override-parameters="{ratio : 1,speed : 300,freeMode : false,freeModeFluid : false,simulateTouch : true,followFinger: true,onlyExternal : false,createPagination : true,resistance : true,scrollContainer : false, preventLinks : true,    nextButton: '.arrow-right',prevButton: '.arrow-left'}" class="swiper-container swiper_featured swiper-main" initial-slide="0" loop="true" show-nav-buttons="false" slides-per-view="1" space-between="5" pagination-clickable="false">
+        <ks-swiper-slide class="swiper-slide" ng-repeat="image in images">
+            <img src="{{image.url}}" alt="title" />
+          <div class="caption">
+            <div class="captionCover clearfix">        
+              <h3 class="title">{{image.title}}</h3>
+              <div class="caption_wraper"><p>{{image.description}}</p></div>
+              <a class="button right" href="product-fullwidth.html" title="slide-title">{{image.button}}</a>
+            </div>
+          </div>
+        </ks-swiper-slide>
+      </ks-swiper-container>
+    </div>    
+  </div><!-- #slideshow_wrapper -->
+    </div><!-- end #featured -->
+    <div id="main-container" class="homepage">
+    <span class="shadow"></span>
+      <div class="container_12 full-container floatted-banners">
+        <div class="floatted-top-banners">
+          <div ng-repeat="banner in smallBanners" class="banner grid_4">
+            <span class="custom-ribbon left-ribbon"></span>
+            <span class="cover"></span>
+            <img src="{{banner.url}}" alt="banner">
+            <a class="icomoon link-icon" aria-hidden="true" data-icon="&#xe000;"></a>
+          </div>
+        </div><!-- end .floatted-top-banners -->      
+        <hr class="separator">
+        <div class="featured-module module clearfix">
+          <div class="box-heading"><h3>Especiales</h3></div>
+            <div class="slides">
+              <flex-slider item-margin="25" direction-nav="false" slide="s in [1,2]">
+                <li>
+            <div ng-repeat="product in products_grid" class="product-box grid_3"><!--OJOOO MÁXIMO 4 PRODUCTOS-->
+              <span class="ribbon-sale"></span>
+              <a class="img-cover" href="#">
+                <img src="{{product.url}}" alt="product-image">
+              </a>
+              <div class="product-meta">
+                <div class="title"><a href="#">{{product.title}}</a></div>
+                <img src="images/stars-5.png" alt="5-stars-ratting">
+                <div class="price">
+                  <span class="old-price">$589.50</span>
+                  <span class="new-price">$250.50</span>                      
+                </div>
+              </div><!-- product-meta -->
+              <ul class="product-action">
+                <li>
+                  <div class="tooltip-wrapper">
+                    <span class="tooltip">Compare</span>
+                  </div>
+                  <a href="#" class="icomoon" aria-hidden="true" data-icon="&#xe01c;"></a>                    
+                </li>
+                <li>
+                  <div class="tooltip-wrapper">
+                    <span class="tooltip">Wishlist</span>
+                  </div>
+                  <a href="#" class="icomoon" aria-hidden="true" data-icon="&#xe00d;"></a>
+                </li>
+                <li>
+                  <div class="tooltip-wrapper">
+                    <span class="tooltip">Add To Cart</span>
+                  </div>
+                  <a href="#" class="icomoon" aria-hidden="true" data-icon="&#x25e0;"></a>                    
+                </li>
+              </ul>
+            </div><!-- .product-box -->
+            
+            
+                </li>
+              </flex-slider>
+              
+      
+            
+            
+        </div><!-- end .slides -->
+      </div><!-- .featured-module -->
+      <hr class="block-separator">
+      <a href="http://themeforest.net/item/olympia-responsive-html5-ecommerce/4852725"><img src="images/banner.png" alt="banner"></a>
+      <hr class="block-separator">
+      <div class="latest-blog clearfix">
+        <div class="box-heading"><h3>Latest News</h3>
+          <a href="blog.html" class="all-blog right">View All</a>
+        </div>
+        <article class="grid_4">
+          <div class="meta">
+            <span class="date"><span class="day">07</span><span class="month">MAY</span></span>
+            <div class="title"><h4>News Title</h4><span><a href="#">News</a>,<a href="#">Offers</a>,<a href="#">Bestsellers</a></span></div>
+          </div>
+          <a class="img-cover prettyphoto" href="images/images/product-grid.jpg">
+            <i class="icomoon" aria-hidden="true" data-icon="&#xe003;"></i>
+            <img src="images/images/latest-news.jpg" alt="news-image">
+          </a>
+          <div class="excerpt">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et</p>            
+          </div>
+          <a class="blog-link" href="#"><i class="icomoon" aria-hidden="true" data-icon="&#xe01a;"></i>Read More</a>
+        </article>
+        <article class="grid_4">
+          <div class="meta">
+            <span class="date"><span class="day">07</span><span class="month">MAY</span></span>
+            <div class="title"><h4>News Title</h4><span><a href="#">News</a>,<a href="#">Offers</a>,<a href="#">Bestsellers</a></span></div>
+          </div>
+          <a class="img-cover prettyphoto" href="http://vimeo.com/24535181">
+            <i class="icomoon" aria-hidden="true" data-icon="&#xe009;"></i>
+            <img src="images/images/latest-news.jpg" alt="news-image">
+          </a>
+          <div class="excerpt">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et</p>            
+          </div>
+          <a class="blog-link" href="#"><i class="icomoon" aria-hidden="true" data-icon="&#xe01a;"></i>Read More</a>
+        </article>
+        <article class="grid_4 omega">
+          <div class="meta">
+            <span class="date"><span class="day">07</span><span class="month">MAY</span></span>
+            <div class="title"><h4>News Title</h4><span><a href="#">News</a>,<a href="#">Offers</a>,<a href="#">Bestsellers</a></span></div>
+          </div>
+          <a class="img-cover" href="#"><img src="images/images/latest-news.jpg" alt="news-image"></a>
+          <div class="excerpt">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et</p>            
+          </div>
+          <a class="blog-link" href="#"><i class="icomoon" aria-hidden="true" data-icon="&#xe01a;"></i>Read More</a>
+        </article>
+        </div><!-- end .latest-blog -->        
+      </div><!-- end .container_12 -->
+      <div class="base-info">
+        <div class="container_12">
+          <div class="info-block grid_4">
+            <span class="icomoon" aria-hidden="true" data-icon="&#xe078;"></span>
+            <div class="base-info-data">
+              <h4>SEGURIDAD</h4>
+              <span>Consectetur adipisicing elit,</span>
+            </div>
+          </div>
+          <div class="info-block grid_4">
+            <span class="icomoon" aria-hidden="true" data-icon="&#x25df;"></span>
+            <div class="base-info-data">
+              <h4>SOPORTE 24/7 </h4>
+              <span class="phone-number">+213-123-456-7890</span>
+            </div>
+          </div>
+          <div class="info-block grid_4 omega">            
+            <span class="icomoon" aria-hidden="true" data-icon="&#xe06a;"></span>
+            <div class="base-info-data">
+              <h4>ENVÍO GRATIS</h4>
+              <span>adipisicing elit, sed do eiusmod </span>
+            </div>
+          </div>
+        </div>
+      </div><!-- end .base-info -->
+    </div><!-- end #main-container -->

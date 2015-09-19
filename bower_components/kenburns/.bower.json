@@ -1,0 +1,33 @@
+{
+  "name": "kenburns",
+  "homepage": "https://github.com/jxnblk/kenburns",
+  "authors": [
+    "jxnblk <jacksonblack@gmail.com>"
+  ],
+  "description": "Sass mixin for Ken Burns effect background images",
+  "main": "scss/_mixin.scss",
+  "keywords": [
+    "css",
+    "sass",
+    "scss",
+    "ken",
+    "burns"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "_release": "846c887d7b",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "846c887d7b907db28d49e6ef5852aa985a83954d"
+  },
+  "_source": "git://github.com/jxnblk/kenburns.git",
+  "_target": "*",
+  "_originalSource": "kenburns"
+}

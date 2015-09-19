@@ -1,0 +1,123 @@
+
+$kenburns-directions: ( (-1, -1), (-1, 1), (1, 1), (1, -1) ) !default;
+
+@mixin kenburns($options) {
+
+  $name: map-get($options, name);
+  $duration: map-get($options, duration);
+  $images: map-get($options, images);
+  $distance: map-get($options, distance);
+  $d: nth($kenburns-directions, 1);
+  $dx: nth($d, 1);
+  $dy: nth($d, 2);
+
+  position: relative;
+  background-color: transparent;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -2;
+    background-color: black;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: -$distance * 2;
+    left: -$distance * 2;
+    z-index: -1;
+    width: 100% + $distance * 4;
+    height: 100% + $distance * 4;
+    transform: translate3d($distance/2 * $dx, $distance/2 * $dy, 0);
+    opacity: 1;
+    background-image: nth($images, 1);
+    background-size: cover;
+    background-position: center;
+    animation-name: $name;
+    animation-duration: $duration;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+
+}
+
+
+@mixin kenburns-keyframes($options) {
+
+  $name: map-get($options, name);
+  $images: map-get($options, images);
+  $duration: map-get($options, duration);
+  $distance: map-get($options, distance);
+  $length: length($images);
+  $step: 100% / ($length * 3);
+
+  @keyframes #{$name} {
+    $increment: 0;
+    @each $image in $images {
+      $index: index($images, $image);
+      // Starting index with 1 is such a good idea
+      $d: nth($kenburns-directions, ($index - 1) % 4 + 1);
+      $dx: nth($d, 1);
+      $dy: nth($d, 2);
+
+      @if ($index < $length) {
+        $next-image: nth($images, $index + 1);
+        $next-d: nth($kenburns-directions, ($index) % 4 + 1);
+        $next-dx: nth($next-d, 1);
+        $next-dy: nth($next-d, 2);
+      } @else {
+        $next-image: nth($images, 1);
+        $next-d: nth($kenburns-directions, 1);
+        $next-dx: nth($next-d, 1);
+        $next-dy: nth($next-d, 2);
+      }
+
+      #{$increment} {
+        background-image: $image;
+        transform: translate3d($distance/2 * $dx, $distance/2 * $dy, 0);
+        opacity: 1;
+      }
+
+      $increment: $increment + $step;
+
+      #{$increment} {
+        background-image: $image;
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+      }
+
+      $increment: $increment + $step;
+
+      #{$increment - .01%} {
+        background-image: $image;
+        transform: translate3d(-$distance/2 * $dx, -$distance/2 * $dy, 0);
+        opacity: 0;
+      }
+
+      #{$increment} {
+        background-image: $next-image;
+        transform: translate3d($distance * $next-dx, $distance * $next-dy, 0);
+        opacity: 0;
+      }
+
+      $increment: $increment + $step;
+
+      @if ($index == $length) {
+        #{$increment} {
+          background-image: $next-image;
+          transform: translate3d($distance/2 * $next-dx, $distance/2 * $next-dy, 0);
+          opacity: 1;
+        }
+      }
+
+    }
+  }
+
+}
+

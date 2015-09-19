@@ -1,0 +1,25 @@
+
+@import '../scss/mixin';
+
+$hubble: (
+  name: hubble,
+  duration: 64s,
+  distance: 12.5%,
+  images: (
+    url(images/02.jpg),
+    url(images/03.jpg),
+    url(images/04.jpg),
+    url(images/05.jpg),
+    url(images/lincoln-1.jpg),
+    url(images/lincoln-2.jpg),
+    url(images/lincoln-3.jpg),
+    url(images/lincoln-4.jpg),
+  )
+);
+
+.bg-hubble {
+  @include kenburns($hubble);
+}
+
+@include kenburns-keyframes($hubble);
+

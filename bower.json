@@ -1,0 +1,43 @@
+{
+  "name": "bishomen-store",
+  "version": "0.0.1",
+  "authors": [
+    "Juan David Arroyave Henao <juanda6@gmail.com>"
+  ],
+  "description": "Components for Bishomen",
+  "main": "index.html",
+  "moduleType": [
+    "amd"
+  ],
+  "keywords": [
+    "bishomen",
+    "store",
+    "bower",
+    "pretty",
+    "boys"
+  ],
+  "license": "MIT",
+  "homepage": "www.bishomen.life",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-flexslider": "~1.3.2",
+    "flexslider": "~2.5.0",
+    "jquery": "~2.1.4",
+    "jquery-easing": "*",
+    "jquery-ui": "~1.11.4",
+    "jquery.fitvids": "fitvids#~1.1.0",
+    "jqzoom": "~2.3.0",
+    "kenburns": "*",
+    "prettyphoto": "*",
+    "prettyPopin": "https://github.com/mihdan/prettyPopin.git",
+    "sharrre": "~1.3.5",
+    "Swiper": "swiper#~3.1.2",
+    "tweet": "https://github.com/seaofclouds/tweet.git#~2.2.0"
+  }
+}
